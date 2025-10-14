@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotem Assouline - Mathematician</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', 'Palatino', 'Book Antiqua', Georgia, serif;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #fafafa;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 40px 60px;
+            border-bottom: 1px solid #d4d4d4;
+            margin-bottom: 60px;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: block;
+            object-fit: cover;
+            border: 3px solid #e8e8e8;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            font-size: 3.2em;
+            color: #000;
+            margin-bottom: 12px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: 'Garamond', 'Times New Roman', serif;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: #666;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 300;
+            margin-bottom: 40px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .bio {
+            font-size: 1.1em;
+            line-height: 2;
+            margin-bottom: 25px;
+            text-align: justify;
+            color: #333;
+        }
+
+        .bio a {
+            color: #1a1a1a;
+            text-decoration: none;
+            border-bottom: 1px solid #999;
+            transition: border-color 0.3s ease;
+        }
+
+        .bio a:hover {
+            border-bottom-color: #000;
+        }
+
+        .cv-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 40px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            transition: all 0.3s ease;
+            border: 2px solid #000;
+        }
+
+        .cv-link:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        section {
+            padding: 50px 0;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 1.4em;
+            color: #000;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 400;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .publication {
+            margin-bottom: 35px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .publication:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .publication-title {
+            font-size: 1.15em;
+            font-weight: 500;
+            color: #000;
+            margin-bottom: 10px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .publication-details {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.8;
+        }
+
+        .publication a {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
+            transition: border-color 0.2s ease;
+        }
+
+        .publication a:hover {
+            border-bottom-color: #000;
+        }
+
+        .talk {
+            margin-bottom: 30px;
+        }
+
+        .talk-title {
+            font-weight: 500;
+            color: #000;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        .talk-title a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
+            transition: border-color 0.2s ease;
+        }
+
+        .talk-title a:hover {
+            border-bottom-color: #000;
+        }
+
+        .talk-details {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .music-item {
+            margin-bottom: 20px;
+            padding-left: 25px;
+            border-left: 2px solid #e0e0e0;
+            color: #555;
+        }
+
+        .music-item a {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
+            transition: border-color 0.2s ease;
+        }
+
+        .music-item a:hover {
+            border-bottom-color: #000;
+        }
+
+        .contact-info {
+            font-size: 1.1em;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .contact-info a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 2px solid #000;
+            padding-bottom: 2px;
+            letter-spacing: 1px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .contact-info a:hover {
+            border-bottom-color: #666;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px;
+            color: #999;
+            font-size: 0.85em;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            header {
+                padding: 50px 25px 40px;
+            }
+            
+            .container {
+                padding: 40px 20px;
+            }
+
+            .bio {
+                text-align: left;
+            }
+
+            section {
+                padding: 40px 0;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .cv-link {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- ADD YOUR PHOTO URL BELOW: Replace 'YOUR_PHOTO_URL_HERE' with the actual URL of your photo -->
+            <img src="YOUR_PHOTO_URL_HERE" alt="Rotem Assouline" class="profile-photo">
+            
+            <h1>Rotem Assouline</h1>
+            <div class="subtitle">Mathematician</div>
+            <div class="bio">
+                I am an FSMP postdoctoral fellow at the <a href="https://www.imj-prg.fr/" target="_blank">Equipe Analyse Fonctionnelle, Institut de Mathématiques de Jussieu - Paris Rive Gauche</a>. 
+                Before that, I was a graduate student at the <a href="https://www.weizmann.ac.il/math/" target="_blank">Weizmann Institute of Science</a> under the supervision of prof. <a href="https://www.weizmann.ac.il/math/klartag/" target="_blank">Bo'az Klartag</a>.
+            </div>
+            <div class="bio">
+                My research interests lie at the intersection of differential geometry, optimal transport theory and convex geometry. Currently, I am working on displacement convexity in optimal transport with general Lagrangian costs.
+            </div>
+            <a href="https://www.dropbox.com/scl/fi/baqlz2c1n0mkzrlqgythl/Rotem_Assouline_CV.pdf?rlkey=8udhumoj2deihlz6214p6mocy&st=5llkz9bj&dl=0" class="cv-link" target="_blank">Curriculum Vitae</a>
+        </header>
+
+        <section>
+            <h2>Publications</h2>
+            
+            <div class="publication">
+                <div class="publication-title">Curvature-Dimension for Autonomous Lagrangians</div>
+                <div class="publication-details">
+                    Preprint, <a href="https://arxiv.org/abs/2409.08001" target="_blank">arXiv:2409.08001</a>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">A refinement of the Šidák-Khatri inequality and a strong Gaussian correlation conjecture</div>
+                <div class="publication-details">
+                    With Arnon Chor and Shay Sadovsky<br>
+                    Preprint, <a href="https://arxiv.org/abs/2407.15684" target="_blank">arXiv:2407.15684</a>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">Brunn-Minkowski inequalities for sprays on surfaces</div>
+                <div class="publication-details">
+                    Journal of Geometric Analysis 34, 339 (2024)<br>
+                    <a href="https://doi.org/10.1007/s12220-024-01792-6" target="_blank">DOI: 10.1007/s12220-024-01792-6</a>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">A finiteness principle for distance functions on Riemannian surfaces with Hölder continuous curvature</div>
+                <div class="publication-details">
+                    <a href="https://arxiv.org/abs/2401.11962" target="_blank">arXiv:2401.11962</a><br>
+                    Accepted to Israel Journal of Mathematics
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">Horocyclic Brunn-Minkowski inequality</div>
+                <div class="publication-details">
+                    With Bo'az Klartag<br>
+                    Advances in Mathematics 436 (2024), Paper No. 109381, 39 pp.<br>
+                    <a href="https://doi.org/10.1016/j.aim.2023.109381" target="_blank">DOI: 10.1016/j.aim.2023.109381</a>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">Growth Competitions on Spherically-Symmetric Riemannian Manifolds</div>
+                <div class="publication-details">
+                    Analysis and Geometry in Metric Spaces 10 (2022), no.1, 146–154<br>
+                    <a href="https://doi.org/10.1515/agms-2022-0139" target="_blank">DOI: 10.1515/agms-2022-0139</a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Teaching</h2>
+            <div class="publication">
+                <div class="publication-title">Harmonic Analysis</div>
+                <div class="publication-details">Tel-Aviv University, Spring 2025</div>
+            </div>
+            <div class="publication">
+                <div class="publication-title">Functional Analysis</div>
+                <div class="publication-details">Tel-Aviv University, Spring 2022</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Selected Talks</h2>
+            
+            <div class="talk">
+                <div class="talk-title"><a href="https://panoptotech.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fd909eb9-e29a-48b8-959f-b1f601029189" target="_blank">Magnetic Brunn-Minkowski and Borell-Brascamp-Lieb inequalities on Riemannian manifolds</a></div>
+                <div class="talk-details">Online AGA Seminar, September 2024</div>
+            </div>
+
+            <div class="talk">
+                <div class="talk-title"><a href="https://www.youtube.com/watch?v=O4OKoJ4Up0k" target="_blank">Brunn-Minkowski inequalities for sprays on surfaces</a></div>
+                <div class="talk-details">High dimensional phenomena: geometric and probabilistic aspects, HIM, Bonn, Germany, March 2024</div>
+            </div>
+
+            <div class="talk">
+                <div class="talk-title"><a href="https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=7c89a828-e64f-4d79-9467-af2b00e373a7" target="_blank">Horocyclic Brunn-Minkowski inequality</a></div>
+                <div class="talk-details">Probabilistic Methods in Geometry and Analysis, ICERM, Providence, RI, October 2022</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Other</h2>
+            
+            <div class="music-item">
+                <a href="https://youtu.be/ew1K_G-bBNk" target="_blank">Elef Ton</a>, a song by <a href="https://open.spotify.com/artist/54nguGxGrHNuaK6gcHk1xz" target="_blank">Alona Haber</a>. I play synth. Produced by Brill.
+            </div>
+
+            <div class="music-item">
+                <a href="https://www.youtube.com/watch?v=2TfuLviBdKs" target="_blank">Derech Ha'Rotem</a>, a song by <a href="https://open.spotify.com/artist/54nguGxGrHNuaK6gcHk1xz" target="_blank">Alona Haber</a> (not about me), with me on the keys. Produced by Yehu Yaron.
+            </div>
+
+            <div class="music-item">
+                <a href="https://open.spotify.com/user/21pztcgnopqpmepyq3epfiywq" target="_blank">My musical taste</a> on Spotify.
+            </div>
+        </section>
+
+        <section>
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <a href="mailto:assouline@imj-prg.fr">assouline@imj-prg.fr</a>
+            </div>
+        </section>
+
+        <footer>
+            © 2025 Rotem Assouline
+        </footer>
+    </div>
+</body>
+</html>
